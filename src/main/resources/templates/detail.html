@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${post.title}">投稿詳細</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+
+    <!-- ヘッダー -->
+    <header class="site-header">
+        <div class="container">
+            <h1 class="site-title">My Recommendations</h1>
+        </div>
+    </header>
+
+    <!-- 詳細コンテンツ -->
+<main class="detail-main">
+    <div class="post-detail-horizontal">
+        <img th:src="@{${post.imageUrl}}" alt="投稿画像" class="post-image-large" />
+        <div class="post-info">
+            <p class="post-date">2025年05月06日</p> <!-- 仮の日付 -->
+            <h2 th:text="${post.title}" class="post-title">タイトル</h2>
+            <p th:text="${post.description}" class="post-description">説明文</p>
+        </div>
+    </div>
+</main>
+
+    <!-- フッター -->
+    <footer class="site-footer">
+        <p>&copy; 2025 MySite. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

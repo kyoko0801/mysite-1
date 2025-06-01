@@ -1,0 +1,193 @@
+/* 共通フォントとベース背景 */
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: #fdfdfd;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* ヘッダー */
+.site-header {
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.site-title {
+    font-size: 24px;
+    text-align: center;
+    margin: 0;
+    color: #444;
+    letter-spacing: 1px;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 24px;
+    padding: 10px 0 0 0;
+    margin: 0;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: #888;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.nav-menu li a:hover {
+    color: #e6b7cc;
+}
+
+/* セクションタイトル */
+.section-title {
+    text-align: center;
+    font-size: 22px;
+    margin: 50px 0 20px;
+    color: #555;
+}
+
+/* 投稿一覧 */
+.post-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+    padding: 20px 0 60px;
+}
+
+/* カード */
+.post-card {
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+    width: 300px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    border: 1px solid #f0f0f0;
+    text-align: left;
+}
+
+.post-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+}
+
+.post-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 14px;
+    margin-bottom: 16px;
+}
+
+.post-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+}
+
+/* タイトル＆説明 */
+.post-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.post-card p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.7;
+}
+
+/* フッター */
+.site-footer {
+    text-align: center;
+    font-size: 12px;
+    color: #aaa;
+    padding: 20px 0;
+    background-color: #fefefe;
+    border-top: 1px solid #eee;
+}
+
+.detail-main {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.post-detail {
+    background: #fff;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.post-image-large {
+    width: 100%;
+    height: auto; /* ← 高さは画像の元サイズに合わせる */
+    max-height: 50vh; /* ← 高さが画面の半分以下になるよう制限 */
+    object-fit: contain; /* ← 見切れず全体を表示 */
+    border-radius: 12px;
+    margin-bottom: 24px;
+}
+
+.post-title {
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.post-description {
+    font-size: 16px;
+    color: #444;
+}
+
+.post-detail-horizontal {
+    display: flex;
+    align-items: flex-start;
+    gap: 36px;
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.post-image-large {
+    width: 48%;
+    max-height: 520px;
+    object-fit: contain;
+    border-radius: 0px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.post-info {
+    width: 52%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.post-date {
+    font-size: 14px;
+    color: #999;
+}
+
+.post-title {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+.post-description {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.6;
+}
+

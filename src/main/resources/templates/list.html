@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <!-- スマホ対応 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>おすすめ投稿一覧</title>
+    <!-- favicon追加 -->
+    <link rel="icon" href="/favicon.ico" type="image/ico">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+
+<body>
+
+    <!-- ヘッダー -->
+    <header class="site-header">
+        <div class="container">
+            <h1 class="site-title">My Recommendations</h1>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#">ホーム</a></li>
+                    <li><a href="#">おすすめ</a></li>
+                    <li><a href="#">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main>
+        <h2 class="section-title">おすすめ投稿一覧</h2>
+
+<div class="post-list">
+    <a th:href="@{/detail(id=${post.id})}" class="post-card-link" th:each="post : ${postList}">
+        <div class="post-card">
+            <img th:src="@{${post.imageUrl}}" alt="投稿画像" class="post-image" />
+            <h3 th:text="${post.title}">タイトル</h3>
+            <p th:text="${post.description}">説明文</p>
+        </div>
+    </a>
+</div>
+
+    </main>
+
+    <!-- フッター -->
+    <footer class="site-footer">
+        <p>&copy; 2025 MySite. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
