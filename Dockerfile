@@ -1,11 +1,21 @@
-# ベースイメージはJava17の軽量版
-FROM eclipse-temurin:17-jdk-alpine
+# 1段階目：ビルド環境（MavenとJDK入り）
+FROM maven:3.9.0-eclipse-temurin-17 AS build
 
-# 作業ディレクトリを作成・移動
 WORKDIR /app
 
-# ビルド済みのjarファイルをコンテナにコピー
-COPY target/*.jar app.jar
+# ソースコードを全コピー
+COPY . .
 
-# アプリ起動コマンド
+# パッケージをビルド（テストはスキップ）
+RUN mvn package -DskipTests
+
+# 2段階目：実行環境（軽量JDKイメージ）
+FROM eclipse-temurin:17-jdk-alpine
+
+WORKDIR /app
+
+# ビルド成果物のjarだけコピー
+COPY --from=build /app/target/*.jar app.jar
+
+# アプリを起動
 ENTRYPOINT ["java", "-jar", "app.jar"]
